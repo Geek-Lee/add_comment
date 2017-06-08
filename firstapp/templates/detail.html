@@ -19,13 +19,11 @@
             <div class="right menu">
                 <div class="item">
                     <h5 class="ui inverted header">
-                            <div class="ui mini circular image">
-                                <img src="{% static 'images/default.png' %}" alt="">
-                            </div>
-
-                            <span>admin</span>
-
-                        </h5>
+                        <div class="ui mini circular image">
+                            <img src="{% static 'images/default.png' %}" alt="">
+                        </div>
+                        <span>admin</span>
+                    </h5>
                 </div>
 
                 <div class="item">
@@ -86,26 +84,26 @@
                             <a href="#" class="author">{{ comment.name }}</a>
                             <div class="metadata">
                                 <div class="date">
-                                    {{ commment.createtime }}
+                                    {{ comment.createtime }}
                                 </div>
-                            </div
-                            <p class="text">
+                            </div>
+                            <p class="text" >
                                 {{ comment.content }}
                             </p>
                         </div>
                     </div>
                 {% endfor %}
-                <!--这里补充评论列表代码-->
 
+                <!--这里补充评论列表代码-->
             </div>
             <div class="ui divider"></div>
-            <form class="ui error tiny form" method="post">
+            <form class="ui error tiny form"  method="post">
                 {% if form.errors %}
-                    <div class="ui error massage">
+                    <div class="ui error message">
                         {{ form.errors }}
                     </div>
                     {% for field in form %}
-                        <div class="{field.errors|yesno:'error, '} field">
+                        <div class="{{ field.errors|yesno:'error, '}} field">
                             {{ field.label }}
                             {{ field }}
                         </div>
@@ -113,10 +111,11 @@
                 {% else %}
                     {% for field in form %}
                     <div class="field">
-                        {{ field.label }}
+                        {{ field.lable }}
                         {{ field }}
                     </div>
                     {% endfor %}
+
                 {% endif %}
                 {% csrf_token %}
                 <!--这里补充评论表单代码-->

@@ -50,7 +50,7 @@
         <div class="ui three column grid">
             {% for article in article_list %}
             <div class="column">
-                <a class="ui fluid card" href="{% url 'detail' article.id %}">
+                <a class="ui fluid card">
                     <div class="image">
                         <img src="{{ article.img }}" alt="" style="height:200px;object-fit: cover;">
                     </div>

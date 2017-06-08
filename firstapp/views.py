@@ -28,5 +28,4 @@ def detail(request):
     comment_list = Comment.objects.all()
     context['comment_list'] = comment_list
     context['form'] = form
-
     return render(request, 'detail.html', context)
